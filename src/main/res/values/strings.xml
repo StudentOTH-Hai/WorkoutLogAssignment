@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">WorkoutLog</string>
+    <string name="choose_workout">Choose Workout</string>
+    <string name="add_workout">Add Workout</string>
+    <string name="show_exercises">Show Exercises</string>
+    <string name="hint_exercisename">Exercise Name</string>
+    <string name="hint_workoutname">Workout Name</string>
+    <string name="button_chooseExercise">Choose your Exercises</string>
+    <string name="hint_musclegroup">Muscle Group</string>
+    <string name="button_AddExercise">Add Exercise</string>
+    <string name="menu_addExcercise">Add</string>
+    <string name="menu_cancel">Cancel</string>
+    <string name="menu_deleteExercise">Delete</string>
+    <string name="enter_exercise_name"> Please enter a Exercise Name </string>
+    <string name="enter_workout_name"> Please enter a Workout Name </string>
+    <string name="save_exercise"> Save Exercise </string>
+    <string name="no_exercises">No exercises existing yet</string>
+    <string name="no_workouts">No workouts existing yet</string>
+    <string name="button_addImage"> Add Image </string>
+    <string name="select_exercise_image">Select exercise image</string>
+    <string name="change_exercise_image">Change exercise image</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="signInButton">"Sign In</string>
+    <string name="SignOut">Sign Out</string>
+    <string name="userInfo">User Info</string>
+    <string name="menu_save">Save</string>
+</resources>
