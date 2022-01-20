@@ -42,11 +42,8 @@ class WorkoutLogActivity : AppCompatActivity() {
 
         i("WorkoutLog Activity started..")
 
-        binding.btnChoose.setOnClickListener() {
-            i("choose Button Pressed")
-        }
 
-        binding.btnAdd.setOnClickListener() {
+        binding.btnChoose.setOnClickListener() {
             val launcherIntent2 = Intent(this, WorkoutListActivity::class.java)
             startActivity(launcherIntent2)
         }

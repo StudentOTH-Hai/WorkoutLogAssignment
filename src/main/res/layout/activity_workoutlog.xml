@@ -39,32 +39,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="START CREATING YOUR OWN WORKOUTS TO ACCOMPLISH YOUR GOAL!"
+                    android:textSize="20sp">
+                </TextView>
+
 
                 <Button
                     android:id="@+id/btnChoose"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@color/colorAccent"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:stateListAnimator="@null"
-                    android:text="@string/choose_workout"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:text="Workout: "
-                    android:textSize="20sp">
-
-                </TextView>
-
-                <Button
-                    android:id="@+id/btnAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
@@ -93,6 +79,10 @@
                     android:text="@string/show_exercises"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
+
+
+
+
 
 
             </LinearLayout>

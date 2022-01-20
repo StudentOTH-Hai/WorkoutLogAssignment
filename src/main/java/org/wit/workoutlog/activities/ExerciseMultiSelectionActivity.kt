@@ -25,7 +25,8 @@ class ExerciseMultiSelectionActivity :  AppCompatActivity(), OnItemCheckListener
     lateinit var app: MainApp
     private lateinit var binding: ActivityExerciseMultiSelectionBinding
     lateinit var tempExerciseList: ArrayList<ExerciseModel>
-
+    var workout = WorkoutModel()
+    var edit = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -49,6 +50,17 @@ class ExerciseMultiSelectionActivity :  AppCompatActivity(), OnItemCheckListener
                 .show()
         }
 
+        if (intent.hasExtra("workout_edit")) {
+            workout = intent.extras?.getParcelable("workout_edit")!!
+            edit = true
+            for(exercise in app.all_exercises.exercises){
+                if(workout.selected.contains(exercise)){
+                    exercise.selected = true
+                }
+            }
+        }
+
+
         tempExerciseList.addAll(app.all_exercises.exercises)
         i("text setted")
 
@@ -58,9 +70,9 @@ class ExerciseMultiSelectionActivity :  AppCompatActivity(), OnItemCheckListener
 
 
         binding.btnChoose.setOnClickListener(){
+
             i("this are selected ")
             setResult(RESULT_OK)
-
             finish()
         }
 
@@ -112,16 +124,28 @@ class ExerciseMultiSelectionActivity :  AppCompatActivity(), OnItemCheckListener
         val tempexer = exercise.copy()
         exercise.selected = true
         i("exercise added")
-        app.all_workouts.createExercise(tempexer)
-        i(app.all_workouts.exercises.size.toString())
-        //in firebase hochladen
+        if(edit) {
+            i("edit mode on")
+            app.all_workouts.addExerciseToWorkout(workout, tempexer)
+            i(workout.selected.toString())
+        }else{
+            app.all_workouts.createExercise(tempexer)
+        }
+
 
     }
 
     override fun onItemUncheck(exercise: ExerciseModel) {
         exercise.selected = false
         i("exercise remove")
-        app.all_workouts.exercises.remove(exercise)
+        if(edit){
+            i("edit mode on")
+            app.all_workouts.removeExerciseFromWorkout(workout, exercise)
+            i(workout.selected.toString())
+        }
+        else {
+            app.all_workouts.exercises.remove(exercise)
+        }
     }
 
 

@@ -42,7 +42,8 @@ class ExerciseAdapter(private var exercises: List<ExerciseModel>, private val li
             binding.exerciseName.text = exercise.exercise_name
             binding.muscleGroup.text = exercise.muscle_group
             Picasso.get().load(Uri.parse(exercise.image)).resize(200,200).into(binding.imageIcon)
-            binding.root.setOnClickListener { listener.onExerciseClick(exercise) }
+            binding.root.setOnClickListener {
+                listener.onExerciseClick(exercise) }
         }
     }
 

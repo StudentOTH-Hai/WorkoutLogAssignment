@@ -13,7 +13,7 @@ class MainApp : Application() {
 
     val all_exercises = ExerciseFireBaseStore()
     val all_workouts = WorkoutFireBaseStore()
-
+    var selected_workout = WorkoutModel()
 
 
     override fun onCreate() {
@@ -21,6 +21,9 @@ class MainApp : Application() {
         Timber.plant(Timber.DebugTree())
         i("Placemark started")
         all_exercises.loadExerciseData()
+        all_workouts.loadWorkoutData()
+
+
 
 
         //all_exercises.add(ExerciseModel("Push-up", "chest"))

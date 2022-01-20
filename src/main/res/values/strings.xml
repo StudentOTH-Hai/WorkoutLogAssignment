@@ -5,6 +5,7 @@
     <string name="show_exercises">Show Exercises</string>
     <string name="hint_exercisename">Exercise Name</string>
     <string name="hint_workoutname">Workout Name</string>
+    <string name="hint_workoutfocus">Focus</string>
     <string name="button_chooseExercise">Choose your Exercises</string>
     <string name="hint_musclegroup">Muscle Group</string>
     <string name="button_AddExercise">Add Exercise</string>
@@ -32,4 +33,5 @@
     <string name="SignOut">Sign Out</string>
     <string name="userInfo">User Info</string>
     <string name="menu_save">Save</string>
+    <string name="menu_remove">Remove</string>
 </resources>

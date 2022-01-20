@@ -16,9 +16,15 @@ import org.wit.workoutlog.adapters.WorkoutListener
 import org.wit.workoutlog.databinding.ActivityExerciseListBinding
 import org.wit.workoutlog.databinding.ActivityWorkoutListBinding
 import org.wit.workoutlog.main.MainApp
+import org.wit.workoutlog.models.ExerciseModel
 import org.wit.workoutlog.models.WorkoutModel
+import timber.log.Timber
 
 class WorkoutListActivity : AppCompatActivity() , WorkoutListener{
+
+    /*In our Workoutlistactitivy the workouts we are creating will be listed
+    */
+
 
     lateinit var app: MainApp
     private lateinit var binding: ActivityWorkoutListBinding
@@ -35,7 +41,7 @@ class WorkoutListActivity : AppCompatActivity() , WorkoutListener{
         setSupportActionBar(binding.toolbar)
 
         app = application as MainApp
-
+        Timber.i(app.all_workouts.workouts.toString())
         val layoutManager = LinearLayoutManager(this)
 
         if(app.all_workouts.workouts.isEmpty())
@@ -52,6 +58,8 @@ class WorkoutListActivity : AppCompatActivity() , WorkoutListener{
         registerRefreshCallback()
 
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_workoutlist, menu)
@@ -80,6 +88,9 @@ class WorkoutListActivity : AppCompatActivity() , WorkoutListener{
     }
 
     override fun onWorkoutClick(workout: WorkoutModel) {
-        TODO("Not yet implemented")
+            val launcherIntent = Intent(this, CreateWorkoutActivity::class.java)
+            launcherIntent.putExtra("edit_workout", workout)
+            refreshIntentLauncher.launch(launcherIntent)
+
     }
 }

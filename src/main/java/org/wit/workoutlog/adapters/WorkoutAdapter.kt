@@ -41,6 +41,7 @@ class WorkoutAdapter(private var workouts: List<WorkoutModel>, private val liste
 
         fun bind(workout: WorkoutModel, listener: WorkoutListener) {
             binding.workoutName.text = workout.workout_name
+            binding.focus.text = workout.workout_focus
             binding.root.setOnClickListener { listener.onWorkoutClick(workout) }
         }
     }
