@@ -26,6 +26,7 @@ Firebase and Google Auth:
 - https://firebase.google.com/docs
 
 SplashScreen:
+
 -https://stackoverflow.com/questions/37860612/splash-screen-android
 
 Filtering: 
